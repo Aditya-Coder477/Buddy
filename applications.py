@@ -9,7 +9,10 @@ import datetime
 
 load_dotenv()
 
-
+# Get API keys with fallbacks
+api_key = os.getenv("GOOGLE_API_KEY")
+weather_api_key = os.getenv("WEATHER_API_KEY", "00d8828313c188483c4a3e1a9a1745ea")
+news_api_key = os.getenv("NEWS_API_KEY", "053f86b085f04a49a27e2cbfbe6e1924")
 api_key= os.getenv("GOOGLE_API_KEY")
 if not api_key:
     raise  ValueError("API key  not found")
@@ -267,4 +270,5 @@ def smart_plan(city):
 
 abc=smart_plan("delhi")
 print(abc)
+
 
